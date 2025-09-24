@@ -48,3 +48,5 @@ print()
 
 print(f"Transforma em maiúsculo:" , strExemplo.capitalize())
 print(f"Transforma em maiúsculo:" , strExemplo.capitalize())
+
+print("Alteração teste Codespace Samir")
