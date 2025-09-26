@@ -1,10 +1,11 @@
 # coding: utf-8
 
-import io
+import io, os
 import sys
 import urllib.request as request
 
 BUFF_SIZE = 1024
+path = os.path.join("Livro Estudo Python", "saida.zip")
 
 def download_length(response, output, length):
     times = length // BUFF_SIZE
@@ -23,12 +24,16 @@ def download(response, output):
         if not data:
             break
         output.write(data)
-        print("Downloaded {bites}".format(bytes=total_download))
+        # print("Downloaded {bites}".format(bytes=total_download))
+        print(f"Downloaded {total_download}")
+
 
 def main():
     response = request.urlopen(sys.argv[1])
-    out_file = io.FileIO("saida.zip",mode="w")
-    content_length = response.getheader('Content-Lenght')
+    # response = request.urlopen("http://livropython.com.br/dados.zip")
+    # out_file = io.FileIO("Livro Estudo Python\saida.zip",mode="w")
+    out_file = io.FileIO(path,mode="wb")
+    content_length = response.getheader('Content-Length')
     if content_length:
         length = int(content_length)
         download_length(response,out_file,length)
@@ -36,7 +41,8 @@ def main():
         download(response,out_file)
     
     response.close()
-    out_file()
+    #out_file()
+    out_file.close() 
     print("Finished")
 
 if __name__ == "__main__":

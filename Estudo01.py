@@ -46,7 +46,15 @@ strExemplo = strExemplo.replace("em 2000", "em 2000 e 2012!")
 print(strExemplo)
 print()
 
-print(f"Transforma em maiúsculo:" , strExemplo.capitalize())
-print(f"Transforma em maiúsculo:" , strExemplo.capitalize())
+print(f"Transforma em frase com primeiro caracter maiúsculo:" , strExemplo.capitalize())
+print(f"Transforma em maiúsculo:" , strExemplo.upper())
+print(f"Transforma primeira letra de cada palavra em maiúsculo:" , strExemplo.title())
+print(f"Slipt {strExemplo}: " , strExemplo.split())
 
-print("Alteração teste Codespace Samir")
+print("Alinhado a esquerda, centralizado e direits com 100 posiçÕes:")
+print("{:<100}".format(strExemplo))   # alinhado à esquerda
+print("{:^100}".format(strExemplo))     # centralizado
+print("{:>100}".format(strExemplo))    # alinhado à direita
+print("{:.<100}".format(strExemplo))   # alinhado à esquerda
+print("{:.^100}".format(strExemplo))     # centralizado
+print("{:.>100}".format(strExemplo))    # alinhado à direita
