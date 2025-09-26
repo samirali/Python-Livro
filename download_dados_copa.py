@@ -5,7 +5,8 @@ import sys
 import urllib.request as request
 
 BUFF_SIZE = 1024
-path = os.path.join("Livro Estudo Python", "saida.zip")
+#path = os.path.join("Livro Estudo Python", "saida.zip")
+path = os.path.join("saida.zip")
 
 def download_length(response, output, length):
     times = length // BUFF_SIZE
